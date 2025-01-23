@@ -1,0 +1,223 @@
+
+<html>
+    <head>
+        <title>Flight Delay Predictor</title>
+    </head>
+    <body>
+        <h1>Welcome to the flight delay prediction service</h1>
+        <p>Check the predicted delay for your flight:
+        <form action="search" method="post">
+            <table>
+                <tr>
+                    <td><label for="arrival_airport">Destination airport 3-digit code:</label></td>
+                    <td><input type="string" name="arrival_airport" required></td>
+                </tr>
+                <tr>
+                    <td><label for="departure_time">Flight scheduled departure time:</label></td>
+                    <td><select name="departure_time" required>
+                        <option value="0000">12:00 a.m.</option>
+                        <option value="0015">12:15 a.m.</option>
+                        <option value="0030">12:30 a.m.</option>
+                        <option value="0045">12:45 a.m.</option>
+                        <option value="100">1:00 a.m.</option>
+                        <option value="115">1:15 a.m.</option>
+                        <option value="130">1:30 a.m.</option>
+                        <option value="145">1:45 a.m.</option>
+                        <option value="200">2:00 a.m.</option>
+                        <option value="215">2:15 a.m.</option>
+                        <option value="230">2:30 a.m.</option>
+                        <option value="245">2:45 a.m.</option>
+                        <option value="300">3:00 a.m.</option>
+                        <option value="315">3:15 a.m.</option>
+                        <option value="330">3:30 a.m.</option>
+                        <option value="345">3:45 a.m.</option>
+                        <option value="400">4:00 a.m.</option>
+                        <option value="415">4:15 a.m.</option>
+                        <option value="430">4:30 a.m.</option>
+                        <option value="445">4:45 a.m.</option>
+                        <option value="500">5:00 a.m.</option>
+                        <option value="515">5:15 a.m.</option>
+                        <option value="530">5:30 a.m.</option>
+                        <option value="545">5:45 a.m.</option>
+                        <option value="600">6:00 a.m.</option>
+                        <option value="615">6:15 a.m.</option>
+                        <option value="630">6:30 a.m.</option>
+                        <option value="645">6:45 a.m.</option>
+                        <option value="700">7:00 a.m.</option>
+                        <option value="715">7:15 a.m.</option>
+                        <option value="730">7:30 a.m.</option>
+                        <option value="745">7:45 a.m.</option>
+                        <option value="800">8:00 a.m.</option>
+                        <option value="815">8:15 a.m.</option>
+                        <option value="830">8:30 a.m.</option>
+                        <option value="845">8:45 a.m.</option>
+                        <option value="900">9:00 a.m.</option>
+                        <option value="915">9:15 a.m.</option>
+                        <option value="930">9:30 a.m.</option>
+                        <option value="945">9:45 a.m.</option>
+                        <option value="1000">10:00 a.m.</option>
+                        <option value="1015">10:15 a.m.</option>
+                        <option value="1030">10:30 a.m.</option>
+                        <option value="1045">10:45 a.m.</option>
+                        <option value="1100">11:00 a.m.</option>
+                        <option value="1115">11:15 a.m.</option>
+                        <option value="1130">11:30 a.m.</option>
+                        <option value="1145">11:45 a.m.</option>
+                        <option value="1200" selected>12:00 p.m.</option>
+                        <option value="1215">12:15 p.m.</option>
+                        <option value="1230">12:30 p.m.</option>
+                        <option value="1245">12:45 p.m.</option>
+                        <option value="1300">1:00 p.m.</option>
+                        <option value="1315">1:15 p.m.</option>
+                        <option value="1330">1:30 p.m.</option>
+                        <option value="1345">1:45 p.m.</option>
+                        <option value="1400">2:00 p.m.</option>
+                        <option value="1415">2:15 p.m.</option>
+                        <option value="1430">2:30 p.m.</option>
+                        <option value="1445">2:45 p.m.</option>
+                        <option value="1500">3:00 p.m.</option>
+                        <option value="1515">3:15 p.m.</option>
+                        <option value="1530">3:30 p.m.</option>
+                        <option value="1545">3:45 p.m.</option>
+                        <option value="1600">4:00 p.m.</option>
+                        <option value="1615">4:15 p.m.</option>
+                        <option value="1630">4:30 p.m.</option>
+                        <option value="1645">4:45 p.m.</option>
+                        <option value="1700">5:00 p.m.</option>
+                        <option value="1715">5:15 p.m.</option>
+                        <option value="1730">5:30 p.m.</option>
+                        <option value="1745">5:45 p.m.</option>
+                        <option value="1800">6:00 p.m.</option>
+                        <option value="1815">6:15 p.m.</option>
+                        <option value="1830">6:30 p.m.</option>
+                        <option value="1845">6:45 p.m.</option>
+                        <option value="1900">7:00 p.m.</option>
+                        <option value="1915">7:15 p.m.</option>
+                        <option value="1930">7:30 p.m.</option>
+                        <option value="1945">7:45 p.m.</option>
+                        <option value="2000">8:00 p.m.</option>
+                        <option value="2015">8:15 p.m.</option>
+                        <option value="2030">8:30 p.m.</option>
+                        <option value="2045">8:45 p.m.</option>
+                        <option value="2100">9:00 p.m.</option>
+                        <option value="2115">9:15 p.m.</option>
+                        <option value="2130">9:30 p.m.</option>
+                        <option value="2145">9:45 p.m.</option>
+                        <option value="2200">10:00 p.m.</option>
+                        <option value="2215">10:15 p.m.</option>
+                        <option value="2230">10:30 p.m.</option>
+                        <option value="2245">10:45 p.m.</option>
+                        <option value="2300">11:00 p.m.</option>
+                        <option value="2315">11:15 p.m.</option>
+                        <option value="2330">11:30 p.m.</option>
+                        <option value="2345">11:45 p.m.</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="arrival_time">Flight arrival time at destination:</label></td>
+                    <td><select name="arrival_time" required>
+                        <option value="0000">12:00 a.m.</option>
+                        <option value="0015">12:15 a.m.</option>
+                        <option value="0030">12:30 a.m.</option>
+                        <option value="0045">12:45 a.m.</option>
+                        <option value="100">1:00 a.m.</option>
+                        <option value="115">1:15 a.m.</option>
+                        <option value="130">1:30 a.m.</option>
+                        <option value="145">1:45 a.m.</option>
+                        <option value="200">2:00 a.m.</option>
+                        <option value="215">2:15 a.m.</option>
+                        <option value="230">2:30 a.m.</option>
+                        <option value="245">2:45 a.m.</option>
+                        <option value="300">3:00 a.m.</option>
+                        <option value="315">3:15 a.m.</option>
+                        <option value="330">3:30 a.m.</option>
+                        <option value="345">3:45 a.m.</option>
+                        <option value="400">4:00 a.m.</option>
+                        <option value="415">4:15 a.m.</option>
+                        <option value="430">4:30 a.m.</option>
+                        <option value="445">4:45 a.m.</option>
+                        <option value="500">5:00 a.m.</option>
+                        <option value="515">5:15 a.m.</option>
+                        <option value="530">5:30 a.m.</option>
+                        <option value="545">5:45 a.m.</option>
+                        <option value="600">6:00 a.m.</option>
+                        <option value="615">6:15 a.m.</option>
+                        <option value="630">6:30 a.m.</option>
+                        <option value="645">6:45 a.m.</option>
+                        <option value="700">7:00 a.m.</option>
+                        <option value="715">7:15 a.m.</option>
+                        <option value="730">7:30 a.m.</option>
+                        <option value="745">7:45 a.m.</option>
+                        <option value="800">8:00 a.m.</option>
+                        <option value="815">8:15 a.m.</option>
+                        <option value="830">8:30 a.m.</option>
+                        <option value="845">8:45 a.m.</option>
+                        <option value="900">9:00 a.m.</option>
+                        <option value="915">9:15 a.m.</option>
+                        <option value="930">9:30 a.m.</option>
+                        <option value="945">9:45 a.m.</option>
+                        <option value="1000">10:00 a.m.</option>
+                        <option value="1015">10:15 a.m.</option>
+                        <option value="1030">10:30 a.m.</option>
+                        <option value="1045">10:45 a.m.</option>
+                        <option value="1100">11:00 a.m.</option>
+                        <option value="1115">11:15 a.m.</option>
+                        <option value="1130">11:30 a.m.</option>
+                        <option value="1145">11:45 a.m.</option>
+                        <option value="1200" selected>12:00 p.m.</option>
+                        <option value="1215">12:15 p.m.</option>
+                        <option value="1230">12:30 p.m.</option>
+                        <option value="1245">12:45 p.m.</option>
+                        <option value="1300">1:00 p.m.</option>
+                        <option value="1315">1:15 p.m.</option>
+                        <option value="1330">1:30 p.m.</option>
+                        <option value="1345">1:45 p.m.</option>
+                        <option value="1400">2:00 p.m.</option>
+                        <option value="1415">2:15 p.m.</option>
+                        <option value="1430">2:30 p.m.</option>
+                        <option value="1445">2:45 p.m.</option>
+                        <option value="1500">3:00 p.m.</option>
+                        <option value="1515">3:15 p.m.</option>
+                        <option value="1530">3:30 p.m.</option>
+                        <option value="1545">3:45 p.m.</option>
+                        <option value="1600">4:00 p.m.</option>
+                        <option value="1615">4:15 p.m.</option>
+                        <option value="1630">4:30 p.m.</option>
+                        <option value="1645">4:45 p.m.</option>
+                        <option value="1700">5:00 p.m.</option>
+                        <option value="1715">5:15 p.m.</option>
+                        <option value="1730">5:30 p.m.</option>
+                        <option value="1745">5:45 p.m.</option>
+                        <option value="1800">6:00 p.m.</option>
+                        <option value="1815">6:15 p.m.</option>
+                        <option value="1830">6:30 p.m.</option>
+                        <option value="1845">6:45 p.m.</option>
+                        <option value="1900">7:00 p.m.</option>
+                        <option value="1915">7:15 p.m.</option>
+                        <option value="1930">7:30 p.m.</option>
+                        <option value="1945">7:45 p.m.</option>
+                        <option value="2000">8:00 p.m.</option>
+                        <option value="2015">8:15 p.m.</option>
+                        <option value="2030">8:30 p.m.</option>
+                        <option value="2045">8:45 p.m.</option>
+                        <option value="2100">9:00 p.m.</option>
+                        <option value="2115">9:15 p.m.</option>
+                        <option value="2130">9:30 p.m.</option>
+                        <option value="2145">9:45 p.m.</option>
+                        <option value="2200">10:00 p.m.</option>
+                        <option value="2215">10:15 p.m.</option>
+                        <option value="2230">10:30 p.m.</option>
+                        <option value="2245">10:45 p.m.</option>
+                        <option value="2300">11:00 p.m.</option>
+                        <option value="2315">11:15 p.m.</option>
+                        <option value="2330">11:30 p.m.</option>
+                        <option value="2345">11:45 p.m.</option>
+                    </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit">Get prediction</button>
+        </form>
+    </body>
+</html>
